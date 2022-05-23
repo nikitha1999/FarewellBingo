@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Farewell Bingo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body{
+		background-color:#ffffe6
+	}
+	tr {
+	   line-height: 50px;
+	   min-height: 50px;
+	   height: 50px;
+	   width: 20%
+	}
+	.success {
+	  color: white;
+	}
+	.success:hover {
+	  background-color: #04AA6D;
+	  color: white;
+	}
+	.a {
+	  text-align: center;
+	  font-family: Copperplate, Papyrus, fantasy;
+	}
+	.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+<br>
+	<div class="a">
+		<h1>FAREWELL BINGO</h1>
+	</div>
+<br>
+<div class="container">
+  <div  class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(bg3.png)">
+		<table class="table table-bordered">
+			<thead>
+			  <tr>
+				<th><button class="btn success" id = "1" onclick="displayImage('1')">Never have I ever fallen asleep at work.</button></th>
+				<th><button class="btn success" id = "2" onclick="displayImage('2')">Best Compliment Received.</button></th>
+				<th><button class="btn success" id = "3" onclick="displayImage('3')">Never have I ever accidentally eaten a bug.</button></th>
+				<th><button class="btn success" id = "4" onclick="displayImage('4')">Annoying person in the team?</button></th>
+				<th><button class="btn success" id = "5" onclick="displayImage('1')">Shouted on someone and regreted later ?</button></th>
+			  </tr>
+			</thead>
+			<thead>
+				<tr>
+					<th><button class="btn success" id = "6" onclick="displayImage('2')">Best thing about Eze.</button></th>
+					<th><button class="btn success" id = "7" onclick="displayImage('3')">Never have I ever sang in public.</button></th>
+					<th><button class="btn success" id = "8" onclick="displayImage('4')">Favourite spot.</button></th>
+					<th><button class="btn success" id = "9" onclick="displayImage('1')">Never have I ever snitched on someone else at work.</button></th>
+					<th><button class="btn success" id = "10" onclick="displayImage('2')">Never have I ever been a best man.</button></th>
+				  </tr>
+			</thead>
+			<thead>
+				<tr>
+					<th><button class="btn success" id = "11" onclick="displayImage('3')">Never have I ever read a single Harry Potter book.</button></th>
+					<th><button class="btn success" id = "12" onclick="displayImage('4')">Worst Moment?</button></th>
+					<th><button class="btn success" id = "13" onclick="displayImage('1')">Never have I ever traveled to a foreign country.</button></th>
+					<th><button class="btn success" id = "14" onclick="displayImage('2')">How did you feel Working on weekends?.</button></th>
+					<th><button class="btn success" id = "15" onclick="displayImage('3')">"How often have you wounded yourself by getting angry, fearful, jealous, or vengeful"</button></th>
+				  </tr>
+			</thead>
+			<thead>
+				<tr>
+					<th><button class="btn success" id = "16" onclick="displayImage('4')">“The computer was born to solve problems that did not exist before.”</button></th>
+					<th><button class="btn success" id = "17" onclick="displayImage('1')">Best Moment?</button></th>
+					<th><button class="btn success" id = "18" onclick="displayImage('2')">"Move fast and break things. Unless you are breaking stuff, you are not moving fast enough."</button></th>
+					<th><button class="btn success" id = "19" onclick="displayImage('3')">"Great things in business are never done by one person. They're done by a team of people."</button></th>
+					<th><button class="btn success" id = "20" onclick="displayImage('4')">Cheated while playing Games?</button></th>
+				  </tr>
+			</thead>
+			<thead>
+				<tr>
+					<th><button class="btn success" id = "21" onclick="displayImage('1')">Never have I ever Googled my own name to see what comes up.</button></th>
+					<th><button class="btn success" id = "22" onclick="displayImage('2')">Never have I ever pretended I was running from zombies while on a run.</button></th>
+					<th><button class="btn success" id = "23" onclick="displayImage('3')">Inspirational Person</button></th>
+					<th><button class="btn success" id = "24" onclick="displayImage('4')">Never have I ever re-gifted a gift card.</button></th>
+					<th><button class="btn success" id = "25" onclick="displayImage('1')">Never have I ever been a best man.</button></th>
+				  </tr>
+			</thead>
+		  </table>
+  </div>      
+</div>
+
+<div id="myModal" class="modal">
+	<span class="close">&times;</span>
+	<img class="modal-content" id="img01">
+	<div id="caption"></div>
+</div>
+  
+
+<script>
+	function displayImage(button){
+		var dict = {};
+		dict["1"]="Picture1.png";
+		dict['2']="Picture2.png";
+		dict["3"]="Picture3.png";
+		dict["4"]="Picture4.png";
+		var modal = document.getElementById("myModal");
+		var img = document.getElementById(button);
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		modal.style.display = "block";
+		modalImg.src = dict[button];
+		var x = dict[button].split(".");
+		captionText.innerHTML = x[0];
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick = function() { 
+		modal.style.display = "none";
+		}
+	}
+</script>
+
+</body>
+</html>
