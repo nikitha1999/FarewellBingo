@@ -7,4 +7,6 @@ Index.html in a browser.
 Glimpse of the app:
 
 
-https://user-images.githubusercontent.com/36513863/173825106-22dcd706-8359-428b-b6a6-ed24d816870d.mp4
+
+https://user-images.githubusercontent.com/36513863/174228840-2f872da9-98ca-4296-8235-65501d79af1f.mp4
+
